@@ -15,9 +15,9 @@ class t_eq2_controller{
     }
     on_solve()
     {
-       var a = this.viwe.get_a();
-       var b = this.viwe.get_b();
-       var c = this.viwe.get_c();
+       var a = this.view.get_a();
+       var b = this.view.get_b();
+       var c = this.view.get_c();
 
         this.model.set_coefficients(a , b , c);
         this.model.solve();
