@@ -3,7 +3,7 @@ class t_eq2_view{
     constructor()
     {
         document.getElementById("id_button").addEventListener("click", 
-        this.on_solve_clicked);
+        this.on_solve_clicked.bind(this));//cu bind metoda este apelata pentru clasa curenta si nu pentru alta clasa
     }
 
     set_events(events)
