@@ -9,7 +9,7 @@ function deseneaza(unghi_x, unghi_y)
     var canvas = document.getElementById("id_canvas");
     var context = canvas.getContext("2D");
     var r = 10;
-    context.ClearRect(0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
     //construim o cale
     context.beginPath();
@@ -26,7 +26,7 @@ function on_gyro_data_uab(e)
     document.getElementById("id_alpha").innerHTML = Math.round(e.alpha * 100) / 100;
     document.getElementById("id_beta").innerHTML = Math.round(e.beta * 100) / 100;
     document.getElementById("id_gamma").innerHTML = Math.round(e.gamma * 100) / 100;
-    deseneaza(e.beta, e.gamma);
+    deseneaza( e.gamma, e.beta);
 }
 function on_acc_data_uab(e)
 {
