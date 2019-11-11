@@ -7,9 +7,9 @@ function deseneaza(unghi_x, unghi_y)
 {
     //obtinem context grafic 
     var canvas = document.getElementById("id_canvas");
-    var context = canvas.getContext("2D");
+    var context = canvas.getContext("2d");
     var r = 10;
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.clearReact(0, 0, canvas.width, canvas.height);
 
     //construim o cale
     context.beginPath();
