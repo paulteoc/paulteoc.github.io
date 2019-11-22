@@ -1,4 +1,4 @@
-document.getElementById("id_logic").innerHTML = "Logic version = 2019.11.1.5";
+document.getElementById("id_logic").innerHTML = "Logic version = 2019.11.22.1";
 
 document.getElementById("id_start").addEventListener("click", start);
 document.getElementById("id_stop").addEventListener("click", stop);
@@ -33,6 +33,7 @@ function start() {
         muncitor.onmessage = function (e) {
             document.getElementById("id_prime").innerHTML = e.data;
         }
+        muncitor.postMassage("start");
     }
     else
         muncitor.postMassage("start");
