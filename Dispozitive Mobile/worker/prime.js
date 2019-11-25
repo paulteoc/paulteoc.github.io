@@ -1,6 +1,6 @@
 //cum onmessage interceptam mesajul trimis din desenare.js
 //declaram o variabila locala pentru ca sa testam functionalitatea for ului
-var ruleaza = false;
+var ruleaza = true;
 
 onmassage = function (e) {
     if (e.data == "start") {
