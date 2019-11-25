@@ -37,6 +37,7 @@ function start() {
     document.getElementById("id_stop").disabled = false;
 
     timer_id = setInterval(desenare, 20, unghi);    //setInterval se apeleaza o singura data si se continua pana il oprim cu clearInterval
+   
     if (muncitor == null) {
         muncitor = new Worker("prime.js");                          //creiez legatura cu muncitorul(adica prime.js)
         muncitor.onmessage = function (e)                           //functia onmassage primeste mesaje cu rezultatele creiate de muncitor
