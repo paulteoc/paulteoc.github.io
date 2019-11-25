@@ -1,12 +1,13 @@
-document.getElementById("id_logic").innerHTML = "2019.11.25.5";
+document.getElementById("id_logic").innerHTML = "2019.11.25.6";
 
 document.getElementById("id_start").addEventListener("click", start); //la click ii atasam functia start
 document.getElementById("id_stop").addEventListener("click", stop);
 
 var timer_id;
 var unghi = {}
-    unghi.valoare = 0;
-    
+unghi.valoare = 0;
+var muncitor = null; //testam daca este ceva, daca este null atunci facem unul nou, daca nu este null continuam primul fir de memorie
+
 function desenare(unghi) {
 
 
@@ -31,24 +32,26 @@ function desenare(unghi) {
 }
 
 
-function start() 
-{
+function start() {
     document.getElementById("id_start").disabled = true;
     document.getElementById("id_stop").disabled = false;
-    
-    timer_id = setInterval(desenare, 20, unghi);
 
-    var muncitor = new Worker("prime.js");//creiez legatura cu muncitorul(adica prime.js)
-    muncitor.onmessage = function(e)//functia onmassage primeste mesaje cu rezultatele creiate de muncitor
-    {
-        document.getElementById("id_prime").innerHTML = e.data;//aici vor fi afisate mesajele primite
+    timer_id = setInterval(desenare, 20, unghi);
+    if (muncitor == null) {
+        muncitor = new Worker("prime.js");                          //creiez legatura cu muncitorul(adica prime.js)
+        muncitor.onmessage = function (e)                           //functia onmassage primeste mesaje cu rezultatele creiate de muncitor
+        {
+            document.getElementById("id_prime").innerHTML = e.data;     //aici vor fi afisate mesajele primite
+        }
     }
+    else
+        muncitor.postMessage("start");                  //altfel in momentul in care apasam start se continua firul de executie
 }
 
-function stop()
-{
+function stop() {
     document.getElementById("id_start").disabled = false;
     document.getElementById("id_stop").disabled = true;
 
     clearInterval(timer_id);
-}   
+    muncitor.postMessage("stop");
+}

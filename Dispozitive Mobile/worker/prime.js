@@ -1,6 +1,6 @@
 function este_prim(n) {
     for (var i = 2; i * i <= n; i++)//incercam sa evitam radicalul deoarece este o operatiie costisitoare
-        if (n % i == 0)
+        if (n % i == 0)//calculeaza numerele prime
             return false;
     return true
 }
