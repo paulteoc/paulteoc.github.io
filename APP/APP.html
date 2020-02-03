@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Temperatura Locatiei</title>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <p id="id_logic_version"></p>
+
+    <div class="weather_container">
+
+        <input type="text" id="getWeatherLocation">
+        <button type="button" id="id_button">Solve</button>
+        <p class="city">Oras: </p>
+        <p class="country">Tara: </p>
+        <p class="temp">Temperatura °C:  </p>
+        
+    </div>
+    <br>
+    <!-- <p>UI version = 2019.10.21.0</p>
+    <p id="id_logic_version"></p>
+    <p>Introduceti numarul in zecimal pentru conversie:</p>
+    <input type="text" id="id_a"></input> -->
+
+    <!-- <select id="ddlViewBy">
+        <option value="Bin">Binary</option>
+        <option value="Hex">Hexadecimal</option>
+        <option value="Oct">Octal</option>
+    </select>
+    <br>
+    <button type="button" id="id_button">Convert</button>
+
+    <p id="id_x1"> </p> -->
+
+    <script src="events.js"></script>
+    <script src="view.js"></script> 
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+    <script src="APP.js"></script>
+    <!-- <script src="test.js"></script> -->
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+
+</html>
